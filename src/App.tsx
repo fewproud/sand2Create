@@ -1,33 +1,23 @@
 import React from 'react';
-import { createApp } from '@backstage/core-app-api';
-import { Router } from '@backstage/plugin-catalog';
-import { EntityPage, EntityLayout, EntityLayoutRoute } from '@backstage/plugin-catalog';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { createApp } from '@backstage/app-defaults';
+import { JenkinsPage } from '../dynamic-plugins/dist/backstage-plugin-jenkins'; // Adjust this path as necessary
 
+// Initialize the Backstage app
 const app = createApp({
-  components: {
-    // other components
-  },
-  bindRoutes: ({ bind }) => {
-    bind(catalogPlugin.externalRoutes, {
-      createComponent: createComponentRouteRef,
-    });
-  },
+  // You can customize your app's components and settings here
 });
 
-const CustomEntityPage = () => (
-  <EntityLayout>
-    <EntityLayout.Route path="/" title="History">
-      <OverviewComponent />
-    </EntityLayout.Route>
-  </EntityLayout>
-);
-
+/**
+ * Main application component
+ */
 const App = () => (
-  <AppProvider app={app}>
-    <Router>
-      <CustomEntityPage />
-    </Router>
-  </AppProvider>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/jenkins" element={<JenkinsPage />} />
+    </Routes>
+  </BrowserRouter>
 );
 
-export default App;
+// Export the app's root component
+export default app.createRoot(App);
