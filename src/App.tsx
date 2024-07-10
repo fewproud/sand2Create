@@ -13,8 +13,16 @@ const app = createApp({
  */
 const App = () => (
   <BrowserRouter>
+    <AppBar position="static">
+      <Toolbar>
+        <Tabs>
+          <Tab label="Jenkins" component="a" href="/jenkins" />
+          {/* Add more tabs as needed */}
+        </Tabs>
+      </Toolbar>
+    </AppBar>    
     <Routes>
-      <Route path="/jenkins" title="Jenkins" element={<JenkinsPage />} />
+      <Route path="/jenkins" element={<JenkinsPage />} />
     </Routes>
   </BrowserRouter>
 );
