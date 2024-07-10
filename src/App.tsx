@@ -19,7 +19,6 @@ const App = () => (
       <Toolbar>
         <Tabs>
           <Tab label="Jenkins" component="a" href="/jenkins" />
-          {/* Add more tabs as needed */}
         </Tabs>
       </Toolbar>
     </AppBar>    
