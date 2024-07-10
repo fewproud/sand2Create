@@ -14,7 +14,7 @@ const app = createApp({
 const App = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/jenkins" element={<JenkinsPage />} />
+      <Route path="/jenkins" title="Jenkins" element={<JenkinsPage />} />
     </Routes>
   </BrowserRouter>
 );
