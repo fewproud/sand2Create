@@ -1,33 +1,34 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { createApp } from '@backstage/app-defaults';
-import { JenkinsPage } from '../dynamic-plugins/dist/backstage-plugin-jenkins'; // Adjust this path as necessary
-import { AppBar, Tabs, Tab, Toolbar } from '@material-ui/core'; // Import necessary UI components
+import { JenkinsPage } from '../dynamic-plugins/dist/backstage-plugin-jenkins'; // Adjust path as necessary
+import {
+  Sidebar,
+  SidebarGroup,
+  SidebarItem,
+  SidebarDivider,
+  SidebarSpace,
+  SidebarPage,
+} from '@backstage/core-components';
+import { JenkinsIcon } from '@backstage/plugin-jenkins';
 
-// Initialize the Backstage app
-const app = createApp({
-  // You can customize your app's components and settings here
-});
+const app = createApp();
 
-/**
- * Main application component
- */
 const App = () => (
-  <BrowserRouter>
-    <AppBar position="static">
-      <Toolbar>
-        <Tabs>
-          <Tab label="Jenkins" component="a" href="/jenkins" />
-          {/* Add more tabs as needed */}
-        </Tabs>
-      </Toolbar>
-    </AppBar>
+  <SidebarPage>
+    <Sidebar>
+      <SidebarGroup label="Menu" icon={<JenkinsIcon />}>
+        <SidebarItem icon={<JenkinsIcon />} to="/jenkins" text="Jenkins" />
+        {/* Add more sidebar items here as needed */}
+      </SidebarGroup>
+      <SidebarDivider />
+      <SidebarSpace />
+    </Sidebar>
     <Routes>
       <Route path="/jenkins" element={<JenkinsPage />} />
-      {/* Define other routes here */}
+      {/* Add more routes here as needed */}
     </Routes>
-  </BrowserRouter>
+  </SidebarPage>
 );
 
-// Export the app's root component
 export default app.createRoot(App);
