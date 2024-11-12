@@ -8,6 +8,7 @@ metadata:
     jenkins.io/job-full-name: "myprojects/sand2Create"
     deploy.devops-automation/component_name: "SIT-Tester"
     deploy.devops-automation/test_projectID: "1150"
+    deploy.devops-automation/test_space: "testhub"
 spec:
   type: service
   lifecycle: experimental
