@@ -6,7 +6,7 @@ metadata:
     github.com/project-slug: fewproud/sand2Create
     backstage.io/techdocs-ref: dir:.
     jenkins.io/job-full-name: "myprojects/sand2Create"
-    deploy.devops-automation/component_name: "SIT-Tester"
+    deploy.devops-automation/component_name: "SIT-tester"
     test.devops-automation/projectID: "1100"
     test.devops-automation/space: "Initial"
 spec:
