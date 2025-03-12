@@ -9,6 +9,7 @@ metadata:
     deploy.devops-automation/component_name: "SIT-tester"
     test.devops-automation/projectID: "1150"
     test.devops-automation/space: "testhub"
+    build.devops-automation/projectIDs: "21,22"
 spec:
   type: service
   lifecycle: experimental
